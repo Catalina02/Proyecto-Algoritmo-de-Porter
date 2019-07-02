@@ -1,8 +1,13 @@
 
 package regex;
 import java.util.Scanner;
+import java.util.*;
 import java.io.*;
 import java.util.regex.*;
+import java.util.StringTokenizer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
 
 
 public class Regex {
@@ -62,7 +67,7 @@ public class Regex {
   private static final String ART5= ESPACIO+"(un)"+ESPACIO;
   private static final String ART6= ESPACIO+"(uno)"+ESPACIO;
   private static final String ART7= ESPACIO+"(una)"+ESPACIO;
-
+  private static final String Y=ESPACIO+"[y]"+ESPACIO;
   
   //Pronombres
    private static final String PRON1= ESPACIO+"(est)+(a|e|o)"+ESPACIO;
@@ -173,7 +178,7 @@ public class Regex {
       Pattern sigpunt=Pattern.compile(SIGNOS); //Se da el patron a Buscar
       
       Matcher coincidencia=sigpunt.matcher(Texto);//Se buscan Coincidencias
-      Texto= coincidencia.replaceAll(" ");//se reeemplazan las cioncidencias con un espacio vacio
+      Texto= coincidencia.replaceAll("");//se reeemplazan las cioncidencias con un espacio vacio
       
       return Texto;
   }
@@ -182,7 +187,7 @@ public class Regex {
   {
       Pattern digit=Pattern.compile(DIGITOS);
       Matcher coincidencia=digit.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       return Texto;
       
@@ -234,83 +239,83 @@ public class Regex {
       
       epref=Pattern.compile(PREF1);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF2);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF3);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF4);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF5);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF6);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF7);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF8);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF9);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF10);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF11);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF12);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF13);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF14);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF15);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF16);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF17);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF18);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF19);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        epref=Pattern.compile(PREF20);
       coincidencia=epref.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       return Texto;
       
@@ -324,31 +329,35 @@ public class Regex {
       
       eart=Pattern.compile(ART1);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       eart=Pattern.compile(ART2);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       eart=Pattern.compile(ART3);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       eart=Pattern.compile(ART4);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       eart=Pattern.compile(ART5);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       eart=Pattern.compile(ART6);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       eart=Pattern.compile(ART7);
       coincidencia=eart.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
+       
+      eart=Pattern.compile(Y);
+      coincidencia=eart.matcher(Texto);
+      Texto=coincidencia.replaceAll("");
        
       return Texto;
   }
@@ -360,96 +369,96 @@ public class Regex {
       
       epron= Pattern.compile(PRON1);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON2);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON3);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON4);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON5);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON6);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON7);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON8);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON9);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON10);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON11);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON12);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON13);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON14);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       
       epron= Pattern.compile(PRON15);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON16);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON17);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON18);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON19);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON20);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON21);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON22);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON23);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON24);
       coincidencia=epron.matcher(Texto);
@@ -457,67 +466,67 @@ public class Regex {
       
       epron= Pattern.compile(PRON25);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON26);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON27);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON28);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON29);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON30);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON31);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON32);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON33);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON34);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON35);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON36);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON37);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON38);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON39);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       epron= Pattern.compile(PRON40);
       coincidencia=epron.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       
       return Texto;
@@ -532,63 +541,63 @@ public class Regex {
       //Suf. Sustantivos
       esufijos= Pattern.compile(SS1);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS2);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS3);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS4);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(SS5);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS6);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS7);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS8);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS9);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS10);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS11);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS12);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS13);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SS14);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(SS15);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
    
    
       
@@ -596,152 +605,222 @@ public class Regex {
       
       esufijos= Pattern.compile(SV1);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SV2);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(SV3);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(SV4);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       //Aumentativos
       
       esufijos= Pattern.compile(AUM1);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(AUM2);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(AUM3);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       
       //Diminutivos
       
       esufijos= Pattern.compile(DIM1);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DIM2);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DIM3);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DIM4);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
        esufijos= Pattern.compile(DIM5);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       //Despectivo
       
       esufijos= Pattern.compile(DESP1);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DESP2);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DESP3);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DESP4);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(DESP5);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       //Adjetivo
       
       esufijos= Pattern.compile(ADJ1);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ2);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ3);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ4);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ5);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ6);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ7);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ8);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ9);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ10);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ11);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ12);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ13);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ14);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
       esufijos= Pattern.compile(ADJ15);
       coincidencia=esufijos.matcher(Texto);
-      Texto=coincidencia.replaceAll(" ");
+      Texto=coincidencia.replaceAll("");
       
+      esufijos= Pattern.compile("por");
+      coincidencia=esufijos.matcher(Texto);
+      Texto=coincidencia.replaceAll("");
+      
+      esufijos= Pattern.compile("su");
+      coincidencia=esufijos.matcher(Texto);
+      Texto=coincidencia.replaceAll("");
+      
+      esufijos= Pattern.compile("que");
+      coincidencia=esufijos.matcher(Texto);
+      Texto=coincidencia.replaceAll("");
       
       return Texto;
       
   }
-  
+    public static String[] separarFrase(String s) {
+        int cp = 0; // Cantidad de palabras
+         
+        // Recorremos en busca de espacios
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') { // Si es un espacio
+                cp++; // Aumentamos en uno la cantidad de palabras
+            }
+        }
+         
+        
+        String[] partes = new String[cp + 1];
+        for (int i = 0; i < partes.length; i++) {
+            partes[i] = "";
+        }
+         
+        int ind = 0; // Creamos un índice para las palabras
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') { // Si hay un espacio
+                ind++; // Pasamos a la siguiente palabra
+                continue; // Próximo i
+            }
+            partes[ind] += s.charAt(i); // Sino, agregamos el carácter a la palabra actual
+        }
+        return partes; // Devolvemos las partes
+    }
+
+  public static <K, V extends Comparable<V>> Map<K, V> 
+    sortByValues(final Map<K, V> map) {
+    Comparator<K> valueComparator = 
+             new Comparator<K>() {
+      public int compare(K k1, K k2) {
+        int compare = 
+              map.get(k1).compareTo(map.get(k2));
+        if (compare == 0) 
+          return 1;
+        else 
+          return compare;
+      }
+    };
+ 
+    Map<K, V> sortedByValues = 
+      new TreeMap<K, V>(valueComparator);
+    sortedByValues.putAll(map);
+    return sortedByValues;
+  }
+
+       
+    
+    
+    
   public static void main(String[] args)throws FileNotFoundException
   {
-      Scanner sc = new Scanner(System.in);
-      String linea = sc.nextLine();
-      String txt = linea.toLowerCase();
+      
+      Map<String, Integer> unique = new TreeMap<>();
+
+	
+
+      int i,j;
+       String txt = "El Rogers es muy feo, le gusta lamer patas y oler potos, mmmm patas. El Rogers tiene muchos rulitos que lo hace ver como un perro sucio que no se baña, tiene el anito lleno de caca y huele feo, sus patas huelen a frituras de queso y es muy horrinle, alguien dele un baño rapido, ya no soporto su olor a patas de perro :( ";
+                  txt = txt.toLowerCase();
+     
+   //   String txt = "hola como estas y hola de nuevo y hola como nuevo pajarito precursor pajarito pajaritos";
       Regex x=new Regex();
+      
+
       
       txt=x.EliminarS(txt);
       txt=x.ElimDigit(txt);
@@ -752,9 +831,42 @@ public class Regex {
       txt=x.ElimPronombres(txt);
       txt=x.ElimSufijos(txt);
       
+      String[] p = separarFrase(txt);
+   
       
-      System.out.println("\n\n\n\n"+ txt);
-  
-  }
-  
+      
+      for (i=0; i<p.length; i++) 
+     { 
+        String texto=p[i]; 
+        if(!"".equals(p[i]))
+        {
+            unique.put(texto,(unique.get(texto) == null?1:(unique.get(texto)+1)));
+        } 
+        } 
+
+
+
+   //unique.entrySet()
+     //   .stream()
+       // .sorted(Map.Entry.comparingByValue())
+        //.forEach(System.out::println);
+   Map sortedMap = sortByValues(unique);
+   //System.out.println(sortedMap);
+   String txtO = sortedMap.toString();
+   txtO=x.EliminarS(txtO);
+   //txtO=x.ElimDigit(txtO);
+   txtO=x.ElimPuntuacion(txtO);
+   txtO=x.ElimTildes(txtO);
+   txtO=x.ElimArticulos(txtO);
+   txtO=x.ElimPrefijos(txtO);
+   txtO=x.ElimPronombres(txtO);
+   txtO=x.ElimSufijos(txtO);
+   String[] f = separarFrase(txtO);
+   
+   for (i=f.length-1; i>f.length-11; i--){
+       System.out.println(f[i]);
+   }
+  }  
 }
+ 
+
